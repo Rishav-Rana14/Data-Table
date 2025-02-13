@@ -204,7 +204,7 @@ const DataTable = () => {
   }, [searchTerm, debouncedFetchData]);
 
   useEffect(() => {
-    fetchData(searchTerm); // Fetch data on page/sort change
+    fetchData(searchTerm); 
   }, [page, sortColumn, sortOrder]);
 
   const fetchData = async (search) => {
@@ -263,12 +263,12 @@ const DataTable = () => {
       setSortColumn(column);
       setSortOrder("asc");
     }
-    setPage(1); // Reset to the first page when sorting
+    setPage(1);
   };
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
-    setPage(1); // Reset to the first page when searching
+    setPage(1); 
   };
 
   const totalPages = Math.ceil(totalCount / limit);
@@ -337,11 +337,11 @@ const DataTable = () => {
       if (modalType === "create") {
         await apiService.createData(dataToSend);
         toast.success("Data created successfully!");
-        fetchData(searchTerm); // Refresh data
+        fetchData(searchTerm); 
       } else {
         await apiService.updateData(currentData.id, dataToSend);
         toast.success("Data updated successfully!");
-        fetchData(searchTerm); // Refresh data
+        fetchData(searchTerm); 
       }
 
       closeModal();
@@ -357,7 +357,7 @@ const DataTable = () => {
     try {
       await apiService.deleteData(id);
       toast.success("Data deleted successfully!");
-      fetchData(searchTerm); // Refresh data
+      fetchData(searchTerm); 
     } catch (error) {
       console.error("Error deleting data:", error);
       setError(error.message || "Error deleting data");
@@ -389,7 +389,7 @@ const DataTable = () => {
     timezone: "",
     unlocs: [],
     code: "",
-    coordinates: [null, null], // Important: Initialize coordinates
+    coordinates: [null, null], 
   });
 
   if (loading) {
