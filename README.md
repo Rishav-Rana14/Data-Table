@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# React Data Table with JSON Server Backend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project implements a React data table component that interacts with a JSON Server backend for data management.  It provides features such as pagination, sorting, searching, column visibility control, and CRUD operations (Create, Read, Update, Delete).
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+*   **Data Display:**  Displays data in a tabular format with customizable columns.
+*   **Pagination:** Supports server-side pagination using JSON Server.
+*   **Sorting:**  Allows sorting of data by clicking on column headers, leveraging JSON Server's sorting capabilities.
+*   **Searching:** Implements a search functionality to filter data based on user input.
+*   **Column Visibility:**  Provides the ability to toggle the visibility of individual columns.
+*   **CRUD Operations:**
+    *   **Create:** Add new data entries through a modal form.
+    *   **Update:** Edit existing data entries through a modal form.
+    *   **Delete:** Remove data entries.
+*   **Styling:** Uses styled-components for clean and maintainable styling.
+*   **Notifications:** Uses `react-toastify` for displaying user-friendly notifications.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+*   **React:** JavaScript library for building user interfaces.
+*   **JSON Server:**  Fake REST API for prototyping and testing.
+*   **Axios:**  HTTP client for making API requests.
+*   **Styled-Components:** CSS-in-JS library for styling React components.
+*   **React-Modal:**  Library for creating accessible modals in React.
+*   **React-Toastify:** Library for displaying toast notifications.
+*   **Lodash:** A JavaScript utility library, specifically `debounce`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+*   [Node.js](https://nodejs.org/) (version 12 or higher)
+*   [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup
 
-### `npm run build`
+1.  **Clone the repository:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    ```bash
+    git clone <your_repository_url>
+    cd <your_project_directory>
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2.  **Install dependencies:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ```bash
+    npm install  # or yarn install
+    ```
 
-### `npm run eject`
+3.  **Start JSON Server:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    *   Run the following command in a separate terminal:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+        ```bash
+        npx json-server --watch db.json --port 5000 
+        ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+        *Note:* You may need to install `json-server` globally if you haven't already: `npm install -g json-server`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4.  **Start the React development server:**
 
-## Learn More
+    ```bash
+    npm start  # or yarn start
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    This will open the application in your browser (usually at `http://localhost:3000`).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Data Structure (Example `db.json`)
