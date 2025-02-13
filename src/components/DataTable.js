@@ -468,6 +468,7 @@ const DataTable = () => {
         contentLabel={`${modalType === "create" ? "Create" : "Update"} Data`}
       >
         <h2>{modalType === "create" ? "Create New Data" : "Update Data"}</h2>
+        
         <form onSubmit={handleSubmit}>
           <FormContainer>
             <FormGroup>

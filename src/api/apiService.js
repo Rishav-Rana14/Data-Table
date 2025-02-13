@@ -53,7 +53,6 @@ const apiService = {
             throw error;
         }
     },
-
     getDataById: async (id) => {
         try {
             const response = await api.get(`/data/${id}`); 
